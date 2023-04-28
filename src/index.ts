@@ -1,4 +1,5 @@
 import type { DefaultColors } from 'tailwindcss/types/generated/colors'
+export { defineColorVariables } from './plugin'
 
 type VariableColors = {
   [key in keyof DefaultColors]: DefaultColors[key] extends `#${string}`
