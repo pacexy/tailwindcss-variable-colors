@@ -3,7 +3,7 @@ export { defineColorVariables } from './plugin'
 
 type VariableColors = {
   [key in keyof DefaultColors]: DefaultColors[key] extends `#${string}`
-    ? `rgb(var(--tw-color-${key})/var(--tw-text-opacity))`
+    ? `rgb(var(--tw-color-${key}) / <alpha-value>)`
     : DefaultColors[key] extends string
     ? // has no uppercase letter
       DefaultColors[key] extends Lowercase<DefaultColors[key]>
@@ -11,7 +11,7 @@ type VariableColors = {
       : DefaultColors[key]
     : {
         [level in keyof DefaultColors[key]]: level extends string | number
-          ? `rgb(var(--tw-color-${key}-${level})/var(--tw-text-opacity))`
+          ? `rgb(var(--tw-color-${key}-${level}) / <alpha-value>)`
           : never
       }
 }
@@ -28,7 +28,7 @@ export function createVariableColors(colors: DefaultColors) {
         // key color
         variableColors[
           key
-        ] = `rgb(var(--tw-color-${key})/var(--tw-text-opacity))`
+        ] = `rgb(var(--tw-color-${key}) / <alpha-value>)`
       }
     } else {
       // tonal palette
@@ -36,7 +36,7 @@ export function createVariableColors(colors: DefaultColors) {
       for (const [level] of Object.entries(value)) {
         variableColors[key][
           level
-        ] = `rgb(var(--tw-color-${key}-${level})/var(--tw-text-opacity))`
+        ] = `rgb(var(--tw-color-${key}-${level}) / <alpha-value>)`
       }
     }
   }
