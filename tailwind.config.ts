@@ -7,7 +7,7 @@ const config: Config = {
   theme: {
     colors: createVariableColors(colors),
   },
-  plugins: [defineColorVariables({ colors })],
+  plugins: [defineColorVariables(colors)],
 }
 
 export default config

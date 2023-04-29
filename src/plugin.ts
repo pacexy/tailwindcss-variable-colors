@@ -8,16 +8,18 @@ import {
 } from '@material/material-color-utilities'
 
 interface Options {
-  colors: DefaultColors
   mode?: 'invert'
 }
-export const defineColorVariables = plugin.withOptions<Options>(({ colors }) => {
-  return ({ addBase }) => {
+export function defineColorVariables(
+  colors: DefaultColors,
+  options: Options = {},
+) {
+  return plugin(({ addBase }) => {
     addBase({
       ':root': createColorVariables(colors),
     })
-  }
-})
+  })
+}
 
 export function createColorVariables(colors: DefaultColors) {
   const colorVariables = {} as any

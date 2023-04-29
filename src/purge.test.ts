@@ -20,7 +20,7 @@ test('main', async () => {
         theme: {
           colors: createVariableColors(colors),
         },
-        plugins: [defineColorVariables({ colors })],
+        plugins: [defineColorVariables(colors)],
       },
     }),
     pruneVar(),

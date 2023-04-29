@@ -25,7 +25,7 @@ const config: Config = {
       padding: '1rem',
     },
   },
-  plugins: [defineColorVariables({ colors })],
+  plugins: [defineColorVariables(colors)],
 }
 
 export default config
