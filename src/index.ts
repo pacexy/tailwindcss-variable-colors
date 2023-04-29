@@ -1,22 +1,23 @@
-import type { DefaultColors } from 'tailwindcss/types/generated/colors'
+import { Colors } from './type'
+
 export { defineColorVariables } from './plugin'
 
 type VariableColors = {
-  [key in keyof DefaultColors]: DefaultColors[key] extends `#${string}`
+  [key in keyof Colors]: Colors[key] extends `#${string}`
     ? `rgb(var(--tw-color-${key}) / <alpha-value>)`
-    : DefaultColors[key] extends string
+    : Colors[key] extends string
     ? // has no uppercase letter
-      DefaultColors[key] extends Lowercase<DefaultColors[key]>
+      Colors[key] extends Lowercase<Colors[key]>
       ? key
-      : DefaultColors[key]
+      : Colors[key]
     : {
-        [level in keyof DefaultColors[key]]: level extends string | number
+        [level in keyof Colors[key]]: level extends string | number
           ? `rgb(var(--tw-color-${key}-${level}) / <alpha-value>)`
           : never
       }
 }
 
-export function createVariableColors(colors: DefaultColors) {
+export function createVariableColors<T extends Colors>(colors: T) {
   const variableColors = {} as any
 
   for (const [key, value] of Object.entries(colors)) {
@@ -26,9 +27,7 @@ export function createVariableColors(colors: DefaultColors) {
         variableColors[key] = value
       } else {
         // key color
-        variableColors[
-          key
-        ] = `rgb(var(--tw-color-${key}) / <alpha-value>)`
+        variableColors[key] = `rgb(var(--tw-color-${key}) / <alpha-value>)`
       }
     } else {
       // tonal palette

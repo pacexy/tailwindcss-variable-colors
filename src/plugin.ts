@@ -1,17 +1,17 @@
 import plugin from 'tailwindcss/plugin'
-import { DefaultColors } from 'tailwindcss/types/generated/colors'
 import {
   argbFromHex,
   redFromArgb,
   greenFromArgb,
   blueFromArgb,
 } from '@material/material-color-utilities'
+import { Colors } from './type'
 
 interface Options {
   mode?: 'invert'
 }
-export function defineColorVariables(
-  colors: DefaultColors,
+export function defineColorVariables<T extends Colors>(
+  colors: T,
   options: Options = {},
 ) {
   return plugin(({ addBase }) => {
@@ -21,7 +21,7 @@ export function defineColorVariables(
   })
 }
 
-export function createColorVariables(colors: DefaultColors) {
+export function createColorVariables<T extends Colors>(colors: T) {
   const colorVariables = {} as any
   const darkColorVariables = {} as any
 
