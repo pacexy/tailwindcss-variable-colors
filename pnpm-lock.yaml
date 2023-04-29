@@ -14,10 +14,6 @@ importers:
         version: 0.30.1
 
   packages/core:
-    dependencies:
-      '@material/material-color-utilities':
-        specifier: ^0.2.6
-        version: 0.2.6
     devDependencies:
       '@total-typescript/ts-reset':
         specifier: ^0.4.2
@@ -382,10 +378,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
-
-  /@material/material-color-utilities@0.2.6:
-    resolution: {integrity: sha512-pMdkH7PvuJQS1q9igiPFfrS04Zu1feDXOVV69uWe2kr+RcK+7v3OylIYMwJDIwip1pFdGyTY4KkMy6vPIA/uSw==}
-    dev: false
 
   /@next/env@13.3.1:
     resolution: {integrity: sha512-EDtCoedIZC7JlUQ3uaQpSc4aVmyhbLHmQVALg7pFfQgOTjgSnn7mKtA0DiCMkYvvsx6aFb5octGMtWrOtGXW9A==}

@@ -1,10 +1,4 @@
 import plugin from 'tailwindcss/plugin'
-import {
-  argbFromHex,
-  redFromArgb,
-  greenFromArgb,
-  blueFromArgb,
-} from '@material/material-color-utilities'
 import { Colors } from './type'
 
 interface Options {
@@ -32,7 +26,7 @@ export function createColorVariables<T extends Colors>(colors: T) {
         continue
       } else {
         // key color
-        colorVariables[`--tw-color-${key}`] = rgb(value)
+        colorVariables[`--tw-color-${key}`] = hex2rgb(value)
         if (key === 'white') {
           darkColorVariables[`--tw-color-${key}`] = '0 0 0'
         } else if (key === 'black') {
@@ -42,7 +36,7 @@ export function createColorVariables<T extends Colors>(colors: T) {
     } else {
       // tonal palette
       for (const [level, hex] of Object.entries(value)) {
-        const str = rgb(hex as string)
+        const str = hex2rgb(hex as string)
         colorVariables[`--tw-color-${key}-${level}`] = str
         darkColorVariables[`--tw-color-${key}-${1000 - Number(level)}`] = str
       }
@@ -55,10 +49,13 @@ export function createColorVariables<T extends Colors>(colors: T) {
   }
 }
 
-function rgb(hex: string) {
-  const argb = argbFromHex(hex)
-  const r = redFromArgb(argb)
-  const g = greenFromArgb(argb)
-  const b = blueFromArgb(argb)
+function hex2rgb(hex: string) {
+  // process hex shortcut #fff
+  if (hex.length === 4) {
+    hex += hex.slice(1)
+  }
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
   return `${r} ${g} ${b}`
 }
