@@ -16,7 +16,7 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "dev":"npm run build -- --watch",
+    "dev": "npm run build -- --watch",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "test": "vitest",
     "prepublishOnly": "pnpm run build"
@@ -29,6 +29,8 @@
   "license": "MIT",
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.4.2",
+    "postcss": "8.4.23",
+    "postcss-prune-var": "^1.0.4",
     "prettier": "2.8.8",
     "tailwindcss": "^3.3.2",
     "tsup": "6.7.0",
@@ -40,5 +42,10 @@
   },
   "dependencies": {
     "@material/material-color-utilities": "^0.2.6"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "postcss-prune-var@1.0.4": "patches/postcss-prune-var@1.0.4.patch"
+    }
   }
 }

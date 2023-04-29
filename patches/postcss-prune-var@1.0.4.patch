@@ -1,0 +1,10 @@
+diff --git a/index.js b/index.js
+index 1d44f25353b21da82beb9f63760b20a40803e2ca..8291988e6f1b2ef76088005d45a4356b76ce533a 100644
+--- a/index.js
++++ b/index.js
+@@ -66,3 +66,5 @@ module.exports = () => {
+ 		},
+ 	};
+ };
++
++module.exports.postcss = true

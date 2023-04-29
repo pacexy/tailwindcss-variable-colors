@@ -23,6 +23,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "postcss-prune-var": "^1.0.4",
     "tailwindcss-variable-colors": "workspace:*"
   }
 }

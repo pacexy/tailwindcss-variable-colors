@@ -1,5 +1,10 @@
 lockfileVersion: '6.0'
 
+patchedDependencies:
+  postcss-prune-var@1.0.4:
+    hash: wzdk2bpvoes6fvkfioxotg4xk4
+    path: patches/postcss-prune-var@1.0.4.patch
+
 importers:
 
   .:
@@ -11,6 +16,12 @@ importers:
       '@total-typescript/ts-reset':
         specifier: ^0.4.2
         version: 0.4.2
+      postcss:
+        specifier: 8.4.23
+        version: 8.4.23
+      postcss-prune-var:
+        specifier: ^1.0.4
+        version: 1.0.4(patch_hash=wzdk2bpvoes6fvkfioxotg4xk4)
       prettier:
         specifier: 2.8.8
         version: 2.8.8
@@ -66,6 +77,9 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
     devDependencies:
+      postcss-prune-var:
+        specifier: ^1.0.4
+        version: 1.0.4(patch_hash=wzdk2bpvoes6fvkfioxotg4xk4)
       tailwindcss-variable-colors:
         specifier: workspace:*
         version: link:..
@@ -2274,11 +2288,6 @@ packages:
       type-check: 0.4.0
     dev: false
 
-  /lilconfig@2.0.6:
-    resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
-    engines: {node: '>=10'}
-    dev: true
-
   /lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
     engines: {node: '>=10'}
@@ -2682,7 +2691,7 @@ packages:
       ts-node:
         optional: true
     dependencies:
-      lilconfig: 2.0.6
+      lilconfig: 2.1.0
       postcss: 8.4.23
       yaml: 1.10.2
     dev: true
@@ -2711,6 +2720,11 @@ packages:
     dependencies:
       postcss: 8.4.23
       postcss-selector-parser: 6.0.11
+
+  /postcss-prune-var@1.0.4(patch_hash=wzdk2bpvoes6fvkfioxotg4xk4):
+    resolution: {integrity: sha512-qM2PnuqA1HABaqxyhrXVqxyP3d7B4z2i0+W4QT01Xm2ib53KkMPxxJ4JIhzpDXua6J0C2ySKd+NKa8E8w32y3Q==}
+    dev: true
+    patched: true
 
   /postcss-selector-parser@6.0.11:
     resolution: {integrity: sha512-zbARubNdogI9j7WY4nQJBiNqQf3sLS3wCP4WfOidu+p28LofJqDH1tcXypGrcmMHhDk2t9wGhCsYe/+szLTy1g==}
