@@ -1,0 +1,39 @@
+{
+  "name": "tailwindcss-variable-colors",
+  "version": "0.0.0",
+  "description": "My awesome typescript library",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "npm run build -- --watch",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "prepublishOnly": "pnpm run build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@total-typescript/ts-reset": "^0.4.2",
+    "postcss": "8.4.23",
+    "postcss-prune-var": "^1.0.4",
+    "prettier": "2.8.8",
+    "tailwindcss": "^3.3.2",
+    "tsup": "6.7.0",
+    "typescript": "5.0.4"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.3.0"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "^0.2.6"
+  }
+}
