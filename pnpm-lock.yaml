@@ -65,6 +65,10 @@ importers:
       typescript:
         specifier: 5.0.4
         version: 5.0.4
+    devDependencies:
+      tailwindcss-variable-colors:
+        specifier: workspace:*
+        version: link:..
 
 packages:
 

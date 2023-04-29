@@ -16,8 +16,8 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build-fast": "tsup src/index.ts --format cjs,esm",
-    "build": "pnpm run build-fast -- --dts-resolve",
+    "dev":"npm run build -- --watch",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
     "test": "vitest",
     "prepublishOnly": "pnpm run build"
   },
