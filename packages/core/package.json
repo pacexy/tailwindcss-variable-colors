@@ -1,10 +1,22 @@
 {
   "name": "tailwindcss-variable-colors",
   "version": "0.0.0",
-  "description": "My awesome typescript library",
+  "description": "Add dark mode support with just one class",
   "publishConfig": {
     "access": "public"
   },
+  "author": "pacexy <pacexy@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/pacexy/tailwindcss-variable-colors#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pacexy/tailwindcss-variable-colors.git"
+  },
+  "bugs": "https://github.com/pacexy/tailwindcss-variable-colors/issues",
+  "keywords": [
+    "tailwindcss"
+  ],
+  "sideEffects": false,
   "files": [
     "dist"
   ],
@@ -20,7 +32,6 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "prepublishOnly": "pnpm run build"
   },
-  "license": "MIT",
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.4.2",
     "postcss": "8.4.23",
