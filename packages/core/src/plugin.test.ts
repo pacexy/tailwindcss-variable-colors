@@ -1,11 +1,11 @@
 import colors from 'tailwindcss/colors'
 
 import { describe, expect, it } from 'vitest'
-import { createColorVariables } from '../src/plugin'
+import { generateColorVariables } from '../src/plugin'
 
 describe('should', () => {
   it('match snapshot', () => {
-    expect(createColorVariables(colors)).toMatchInlineSnapshot(`
+    expect(generateColorVariables(colors)).toMatchInlineSnapshot(`
       {
         "&.dark": {
           "--tw-color-amber-100": "120 53 15",

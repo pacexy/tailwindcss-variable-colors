@@ -1,7 +1,7 @@
 import { test, expect } from 'vitest'
 import postcss from 'postcss'
 import tailwindcss from 'tailwindcss'
-import { createVariableColors, defineColorVariables } from '.'
+import { createVariableColors, variableColorsPlugin } from '.'
 import colors from 'tailwindcss/colors'
 
 // @ts-ignore
@@ -20,7 +20,7 @@ test('main', async () => {
         theme: {
           colors: createVariableColors(colors),
         },
-        plugins: [defineColorVariables(colors)],
+        plugins: [variableColorsPlugin(colors)],
       },
     }),
     pruneVar(),

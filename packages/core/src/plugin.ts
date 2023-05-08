@@ -4,18 +4,18 @@ import { Colors } from './type'
 interface Options {
   mode?: 'invert'
 }
-export function defineColorVariables<T extends Colors>(
+export function variableColorsPlugin<T extends Colors>(
   colors: T,
   options: Options = {},
 ) {
   return plugin(({ addBase }) => {
     addBase({
-      ':root': createColorVariables(colors),
+      ':root': generateColorVariables(colors),
     })
   })
 }
 
-export function createColorVariables<T extends Colors>(colors: T) {
+export function generateColorVariables<T extends Colors>(colors: T) {
   const colorVariables = {} as any
   const darkColorVariables = {} as any
 

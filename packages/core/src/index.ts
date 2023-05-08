@@ -1,6 +1,6 @@
 import { Colors } from './type'
 
-export { defineColorVariables } from './plugin'
+export { variableColorsPlugin } from './plugin'
 
 type VariableColors = {
   [key in keyof Colors]: Colors[key] extends `#${string}`
