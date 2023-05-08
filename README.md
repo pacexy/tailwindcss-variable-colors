@@ -31,6 +31,17 @@ const config: Config = {
 export default config
 ```
 
+```tsx
+// Button.tsx
+const Button = () => (
+  <button className="text-slate-700 bg-slate-100 hover:bg-blue-100 active:bg-blue-200 ...">
+    Button
+  </button>
+)
+```
+
+That's it!
+
 ## License
 
 MIT
