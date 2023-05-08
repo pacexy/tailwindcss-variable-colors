@@ -18,7 +18,7 @@ pnpm i -D tailwindcss-variable-colors
 // tailwind.config.ts
 import { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
-import { createVariableColors, variableColorsPlugin } from './src'
+import { createVariableColors, variableColorsPlugin } from 'tailwindcss-variable-colors'
 
 const config: Config = {
   content: ['./src/**/*.tsx'],
