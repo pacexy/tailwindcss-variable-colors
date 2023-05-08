@@ -6,7 +6,7 @@ Add dark mode support with just one class
 
 <https://tailwindcss-variable-colors.vercel.app/>
 
-## Install
+## Installation
 
 ```sh
 pnpm i -D tailwindcss-variable-colors
@@ -63,6 +63,10 @@ module.exports = {
   },
 }
 ```
+
+## Inspired by
+
+<https://innei.ren/posts/programming/tailwind-built-in-colors-dark-mode>
 
 ## License
 
