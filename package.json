@@ -1,6 +1,6 @@
 {
   "name": "@tailwindcss-variable-colors/monorepo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "My awesome typescript library",
   "packageManager": "pnpm@8.3.1",
