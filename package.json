@@ -8,7 +8,7 @@
     "build": "pnpm -r --parallel run build",
     "dev": "pnpm -r --parallel run dev",
     "test": "vitest",
-    "prepublishOnly": "pnpm run build"
+    "release": "bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --access public"
   },
   "prettier": {
     "singleQuote": true,
@@ -16,6 +16,7 @@
     "trailingComma": "all"
   },
   "devDependencies": {
+    "bumpp": "^9.1.0",
     "vitest": "0.30.1"
   },
   "pnpm": {
