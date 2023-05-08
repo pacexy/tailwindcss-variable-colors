@@ -42,6 +42,28 @@ const Button = () => (
 
 That's it!
 
+## Production
+
+To reduce the css bundle size, you can use [`postcss-prune-var`](https://github.com/tomasklaen/postcss-prune-var) to prune unused css variables.
+
+First, install it as a dev dependency
+
+```sh
+pnpm i -D postcss-prune-var
+```
+
+Then add it to postcss config
+
+```js
+//postcss.config.js
+module.exports = {
+  plugins: {
+    // ...
+    'postcss-prune-var': {},
+  },
+}
+```
+
 ## License
 
 MIT
