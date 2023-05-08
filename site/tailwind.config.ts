@@ -2,7 +2,7 @@ import { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
 import {
   createVariableColors,
-  defineColorVariables,
+  variableColorsPlugin,
 } from 'tailwindcss-variable-colors'
 
 const config: Config = {
@@ -25,7 +25,7 @@ const config: Config = {
       padding: '1rem',
     },
   },
-  plugins: [defineColorVariables(colors)],
+  plugins: [variableColorsPlugin(colors)],
 }
 
 export default config
