@@ -10,7 +10,7 @@ export default function Home() {
         TailwindCSS Variable Colors
       </h1>
       <p className="text-center text-slate-600 text-xl">
-        Add dark mode supprot with just one class
+        Add dark mode support with just one class
       </p>
       <FileSize />
       <div className="flex flex-col gap-4 sm:flex-row">
