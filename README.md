@@ -24,7 +24,7 @@ const config: Config = {
   content: ['./src/**/*.tsx'],
   theme: {
     // You can also not pass the colors parameter,
-    // it will use the default colors from tailwindcss.
+    // it will use the colors from tailwindcss by default.
     colors: createVariableColors(colors),
   },
   plugins: [variableColorsPlugin(colors)],
