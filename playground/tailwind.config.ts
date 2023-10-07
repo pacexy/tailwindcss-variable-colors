@@ -1,5 +1,4 @@
 import { Config } from 'tailwindcss'
-import colors from 'tailwindcss/colors'
 import {
   createVariableColors,
   variableColorsPlugin,
@@ -12,7 +11,7 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: createVariableColors(colors),
+    colors: createVariableColors(),
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -25,7 +24,7 @@ const config: Config = {
       padding: '1rem',
     },
   },
-  plugins: [variableColorsPlugin(colors)],
+  plugins: [variableColorsPlugin()],
 }
 
 export default config

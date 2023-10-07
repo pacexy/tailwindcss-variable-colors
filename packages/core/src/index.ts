@@ -1,3 +1,5 @@
+import defaultColors from 'tailwindcss/colors'
+
 import { Colors } from './type'
 
 export { variableColorsPlugin } from './plugin'
@@ -17,10 +19,29 @@ type VariableColors = {
       }
 }
 
-export function createVariableColors<T extends Colors>(colors: T) {
+const deprecatedColors = [
+  'lightBlue',
+  'warmGray',
+  'trueGray',
+  'coolGray',
+  'blueGray',
+] as const
+
+export function getDefaultColors() {
+  if (deprecatedColors.some((color) => color in defaultColors)) {
+    deprecatedColors.forEach((color) => {
+      if (color in defaultColors) {
+        delete defaultColors[color]
+      }
+    })
+  }
+  return defaultColors
+}
+
+export function createVariableColors<T extends Colors>(colors?: T) {
   const variableColors = {} as any
 
-  for (const [key, value] of Object.entries(colors)) {
+  for (const [key, value] of Object.entries(colors ?? getDefaultColors())) {
     if (typeof value === 'string') {
       if (!value.startsWith('#')) {
         // color keyword

@@ -388,4 +388,12 @@ describe('should', () => {
       }
     `)
   })
+
+  const defaultVariableColors = createVariableColors()
+  it('should ignore deprecated colors by default', () => {
+    expect(defaultVariableColors['amber']['100']).toMatchInlineSnapshot(
+      '"rgb(var(--tw-color-amber-100) / <alpha-value>)"',
+    )
+    expect(defaultVariableColors['blueGray']).toBeUndefined()
+  })
 })

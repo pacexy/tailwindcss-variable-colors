@@ -1,16 +1,17 @@
 import plugin from 'tailwindcss/plugin'
 import { Colors } from './type'
+import { getDefaultColors } from '.'
 
 interface Options {
   mode?: 'invert'
 }
 export function variableColorsPlugin<T extends Colors>(
-  colors: T,
+  colors?: T,
   options: Options = {},
 ) {
   return plugin(({ addBase }) => {
     addBase({
-      ':root': generateColorVariables(colors),
+      ':root': generateColorVariables(colors ?? getDefaultColors()),
     })
   })
 }
